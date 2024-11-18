@@ -1,0 +1,46 @@
+# Uniwersytet w Biaymstoku 
+# Programowanie w srodowiskach sieciowych 
+# Karol Wojcik
+# 80292 
+
+
+# Wielowątkowy Serwer Socketowy z Logowaniem Komunikatów
+
+## Funkcjonalności
+- Graficzny interfejs klienta (GUI)
+- Obsługa wielu linii wiadomości
+- Automatyczne tworzenie plików `.log` dla każdego użytkownika
+- Możliwość jednoczesnej komunikacji wielu klientów
+
+## Zachowanie Serwera
+- Wyświetla czas połączenia w konsoli
+- Loguje wiadomości każdego użytkownika do osobnego pliku
+- Czeka 10 sekund przed odesłaniem odpowiedzi do klienta
+- Wspiera jednoczesne połączenia (np. 3 otwarte GUI)
+
+## Pliki Logów
+- Tworzone automatycznie dla każdego użytkownika
+- Nazwa pliku: `[nazwaUzytkownika].log`
+- Format wpisu: `[timestamp]: [wiadomość]`
+- Dopisywanie kolejnych wiadomości tego samego użytkownika do tego samego pliku
+
+## Przykład Uruchomienia
+1. Kompilacja: 
+   ```bash
+   javac MultipleSocketServer.java
+   javac SocketClientGUI.java
+   ```
+
+2. Uruchomienie serwera:
+   ```bash
+   java MultipleSocketServerWithLogging
+   ```
+
+3. Uruchomienie klientów:
+   ```bash
+   java SocketClientGUI
+   ```
+
+## Wymagania
+- Java 17+
+- Biblioteki Swing
